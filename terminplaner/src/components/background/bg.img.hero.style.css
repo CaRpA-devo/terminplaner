@@ -1,0 +1,45 @@
+/* Standard-Styles für größere Bildschirme */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 70vh; /* oder eine feste Höhe */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+    transition: height 1s ease-in-out, background-size 1s ease-in-out,
+        filter 1s ease-in-out; /* Übergang für Höhe, Bildgröße und Filter */
+}
+
+/* Blur-Effekt */
+.blur {
+    filter: blur(8px) brightness(0.8);
+}
+
+.clear {
+    filter: none;
+}
+
+/* Media Query für kleinere Bildschirme (z.B. Tablets) */
+@media (max-width: 768px) {
+    .background {
+        background-size: cover; /* Stelle sicher, dass das Bild immer den gesamten Container abdeckt */
+        background-attachment: scroll; /* Auf Tablets und Handys funktioniert fixed nicht immer gut, daher scrollen */
+        height: 35vh; /* Höhe anpassen, z.B. 80% des Viewports */
+        transition: height 1s ease-in-out, background-size 1s ease-in-out,
+            filter 1s ease-in-out; /* Übergang für Höhe und Bildgröße */
+    }
+}
+
+/* Media Query für noch kleinere Bildschirme (z.B. Handys) */
+@media (max-width: 480px) {
+    .background {
+        background-size: cover; /* Das Bild soll immer den Container abdecken */
+        background-attachment: scroll; /* Auch hier auf mobilen Geräten sollte das Bild nicht fixiert sein */
+        height: 40vh; /* Für kleinere Bildschirme eine reduzierte Höhe */
+        transition: height 1s ease-in-out, background-size 1s ease-in-out,
+            filter 1s ease-in-out; /* Übergang für Höhe und Bildgröße */
+    }
+}
