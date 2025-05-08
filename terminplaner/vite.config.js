@@ -11,3 +11,12 @@ export default defineConfig({
     },
     plugins: [react(), tailwindcss()],
 });
+
+module.exports = {
+    content: ["./src/**/*.{js,jsx,ts,tsx}"], // passe das ggf. an
+    plugins: [require("daisyui")],
+    daisyui: {
+        themes: ["light", "dark", "nord"], // gültige DaisyUI-Themes
+        darkTheme: "dark", // verwendet prefers-color-scheme
+    },
+};

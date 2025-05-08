@@ -1,3 +1,5 @@
+import { ThemeToggelButton } from "../buttons/theme.button.comp";
+
 export function Navbar() {
     return (
         <div className="navbar bg-base-300 shadow-sm">
@@ -30,7 +32,7 @@ export function Navbar() {
                             <a>Settings</a>
                         </li>
                         <li>
-                            <a> Logout</a>
+                            <ThemeToggelButton />
                         </li>
                     </ul>
                 </div>
