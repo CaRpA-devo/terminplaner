@@ -146,6 +146,7 @@ export function TerminCard({ savedMemos, setSavedMemos }) {
                                                 { month: "long" }
                                             )}
                                         </span>
+                                        {/* TODO style änder */}
                                         <span className="text-sm text-gray-500">
                                             {totalMemos} Termine
                                         </span>
