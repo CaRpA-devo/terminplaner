@@ -6,7 +6,7 @@ import "../forms/loginForm.style.css";
 
 import { ToastContainer, toast } from "react-toastify";
 
-export function LoginForm() {
+export function LoginForm({ onLogin }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [isLogIn, setLogIn] = useState(false);
@@ -15,41 +15,18 @@ export function LoginForm() {
         event.preventDefault();
         if (username === "Patrick" && password === "12345") {
             setLogIn(true);
+            onLogin();
         } else {
             toast.error("Zugangsdaten nicht korrekt");
         }
     };
-
-    const logoutHandler = () => {
-        setLogIn(false);
-        setUsername("");
-        setPassword("");
-    };
-
-    if (isLogIn) {
-        return (
-            <div className="logged-in flex flex-col items-center gap-4 ">
-                <BackgroundImage isBlurred={!isLogIn} />;
-                <h1 className="text-2xl font-bold text-center">
-                    Willkommen, {username} bei{" "}
-                    <span className="text-primary">MemoMe</span> – dein
-                    persönliches Erinner-mich!
-                </h1>
-                <Button
-                    onClickHandler={logoutHandler}
-                    color={"btn btn-error"}
-                    text={"Logout"}
-                />
-            </div>
-        );
-    }
 
     return (
         <section className="flex justify-center">
             <BackgroundImage isBlurred={!isLogIn} />;
             <form
                 onSubmit={loginHandler}
-                className="login-form flex flex-col items-center p-4 mt-16 bg-base-300 rounded shadow-md w-80"
+                className="login-form flex flex-col items-center p-4 mt-40 bg-base-300 rounded shadow-md w-80"
             >
                 <h1 className="text-2xl font-semibold mb-6 text-center">
                     Login

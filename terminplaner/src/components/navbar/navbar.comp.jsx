@@ -1,4 +1,4 @@
-import { ThemeToggelButton } from "../buttons/theme.button.comp";
+import "../navbar/navbar.style.css";
 
 export function Navbar() {
     return (
@@ -31,9 +31,7 @@ export function Navbar() {
                         <li>
                             <a>Settings</a>
                         </li>
-                        <li>
-                            <ThemeToggelButton />
-                        </li>
+                        <li></li>
                     </ul>
                 </div>
             </div>
