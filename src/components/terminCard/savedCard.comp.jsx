@@ -9,7 +9,7 @@ export function SavedCard({ memo, onDelete }) {
         // TODO Card-Layout anpassen
         <div
             className={`card ${
-                isDone ? "bg-blue-200" : "bg-neutral"
+                isDone ? "bg-violet-950" : "bg-neutral"
             } text-neutral-content flex flex-col  `}
         >
             <div className="card-body items-center text-center">
